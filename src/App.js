@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
-
+import Joke from './jokes/components/Joke.js'
+import Jokes from './jokes/components/Jokes.js'
+import JokeCreate from './jokes/components/JokeCreate'
+import JokeEdit from './jokes/components/JokeEdit'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -54,6 +57,18 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path="/jokes/:id" render={() => (
+            <Joke alert={this.alert} user={user} />
+          )}/>
+          <AuthenticatedRoute user={user} exact path="/jokes" render={() => (
+            <Jokes alert={this.alert} user={user} />
+          )}/>
+          <AuthenticatedRoute user={user} exact path="/create-joke" render={() => (
+            <JokeCreate alert={this.alert} user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path="/jokes/:id/edit" render={() => (
+            <JokeEdit alert={this.alert} user={user}/>
           )} />
         </main>
       </React.Fragment>
