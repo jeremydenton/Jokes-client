@@ -1,6 +1,6 @@
 {
   "name": "jokes-client",
-  "homepage": "https://jeremydenton.github.io/jokes",
+  "homepage": "https://jeremydenton.github.io/jokes-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
